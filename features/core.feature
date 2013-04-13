@@ -4,6 +4,7 @@ Feature: Manage WordPress installation
     Given an empty directory
     When I run `wp core is-installed`
     Then the return code should be 1
+    And STDERR should be empty
 
     When I run `wp core download --quiet`
     Then it should run without errors
